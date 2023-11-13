@@ -1,0 +1,4 @@
+bookStore:
+  file:
+    preFix: booStore-
+    type: xml
