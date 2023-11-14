@@ -2,17 +2,19 @@ package de.ij3rry.MicroServiceOne.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class BookStoreDTO {
-    @JsonProperty("bookstore")
-    private Bookstore bookstore;
+@Setter
+@Getter
+public class BookStoreDTO  implements Serializable {
 
-    @Data
-    public static class Bookstore {
-        @JsonProperty("book")
-        private List<BookDTO> books;
-    }
+    private static final long serialVersionUID = 1L;
+
+    @JsonProperty("books")
+    private List<Book> books;
 }

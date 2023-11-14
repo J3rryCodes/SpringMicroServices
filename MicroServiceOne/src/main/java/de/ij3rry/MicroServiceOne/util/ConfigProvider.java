@@ -10,11 +10,15 @@ public class ConfigProvider {
 
     private static Map<String, Object> yamlData;
     public static String getBookStoreFileNamePrefix(){
-        return (String) ((Map<?, ?>) getYMLData().get("bookStore")).get("file.preFix");
+        Map<?, ?>  bookStore = (Map<?, ?>)  getYMLData().get("bookStore");
+        Map<?, ?> file = (Map<?, ?>) bookStore.get("file");
+        return (String) file.get("preFix");
     }
 
     public static String getBookStoreFileType(){
-        return (String) ((Map<?, ?>) getYMLData().get("bookStore")).get("file.xml");
+        Map<?, ?>  bookStore = (Map<?, ?>)  getYMLData().get("bookStore");
+        Map<?, ?> file = (Map<?, ?>) bookStore.get("file");
+        return (String) file.get("type");
     }
 
     private static Map<String, Object> getYMLData(){
